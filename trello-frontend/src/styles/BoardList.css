@@ -1,0 +1,227 @@
+/* Contêiner dos boards */
+.board-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #f0f2f5;
+}
+
+/* Lista de boards */
+.board-list {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+/* Estilo de cada board */
+.board-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  min-height: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+}
+
+/* Hover no board */
+.board-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Título do board */
+.board-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Botão para adicionar card */
+.board-item button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  align-self: center;
+}
+
+.board-item button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo do container de cards dentro do board */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Estilo do card */
+.card-item {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Título do card */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Estilo de inputs e campos de form */
+.create-board-container input,
+.create-board-container button,
+.modal-content form input,
+.modal-content form textarea,
+.modal-content form button {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Efeito no input e botão */
+.create-board-container input:focus,
+.modal-content form input:focus,
+.modal-content form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Estilo dos inputs */
+.create-board-container input {
+  background-color: #fafafa;
+}
+
+.create-board-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.create-board-container button:hover {
+  background-color: #0056b3;
+}
+
+.modal-content form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.modal-content form button:hover {
+  background-color: #218838;
+}
+
+.modal-content form button[type="button"] {
+  background-color: #dc3545;
+}
+
+.modal-content form button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+/* Modal de criação de card */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 95%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+}
+
+.modal-content form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.modal-content form button[type="button"] {
+  background-color: #dc3545;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-content form button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .board-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .board-list {
+    flex-direction: column;
+  }
+}
